@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+</head>
+<body>
+<h1>Create Customer</h1>
+<a th:href="@{/customers}">Back to list</a>
+<p th:if="${message}">
+    <b th:text="${message}"></b>
+</p>
+<form method="post" th:action="@{/create-customer}" th:object="${customer}">
+    <table>
+        <tr>
+            <td>First Name :</td>
+            <td><input th:field="*{firstName}" type="text"></td>
+        </tr>
+        <tr>
+            <td>Last Name :</td>
+            <td><input th:field="*{lastName}" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
